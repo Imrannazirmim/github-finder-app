@@ -4,54 +4,44 @@ import { Link, useParams } from "react-router";
 import { FaCode, FaStore, FaUser, FaUserFriends } from "react-icons/fa";
 import { PiUsersFourFill } from "react-icons/pi";
 import ReposList from "../components/layout/repos/ReposList";
-
+import { getUser, getUserRepos } from "../context/GithubAction.js";
 
 const User = () => {
-  const { getUser, user, loading, repos, getUserRepos } = useContext(GithubContext);
-  
+  const { user, repos, dispatch } = useContext(GithubContext);
+
   const params = useParams();
   useEffect(() => {
-    if (loading) {
-      return <h2>Loading....</h2>;
-    }
-    getUser(params.login);
-    getUserRepos(params.login)
-  }, []);
+    dispatch({ type: "SET_LOADING" });
+    const getUserData = async () => {
+      const userData = await getUser(params.login);
+      dispatch({ type: "GET_USER", payload: userData });
+
+      const userReposData = await getUserRepos(params.login);
+      dispatch({ type: "GET_REPOS", payload: userReposData });
+    };
+    getUserData();
+  }, [dispatch, params.login]);
 
   const {
     avatar_url,
     bio,
     blog,
-    company,
-    created_at,
-    email,
-    events_url,
+
     followers,
-    followers_url,
+
     following,
-    following_url,
-    gists_url,
-    gravatar_id,
+
     hireable,
     html_url,
-    id,
     location,
     login,
     name,
-    node_id,
-    organizations_url,
+
     public_gists,
     public_repos,
-    received_events_url,
-    repos_url,
-    site_admin,
-    starred_url,
-    subscriptions_url,
+
     twitter_username,
     type,
-    updated_at,
-    url,
-    user_view_type,
   } = user;
 
   return (
@@ -165,7 +155,7 @@ const User = () => {
               {public_repos}
             </div>
           </div>
-            <div className="stat">
+          <div className="stat">
             <div className="stat-figure text-secondary">
               <FaStore className="text-3xl md:text-5xl" />
             </div>
@@ -176,7 +166,7 @@ const User = () => {
           </div>
         </div>
       </section>
-      <ReposList repos={repos}/>
+      <ReposList repos={repos} />
     </>
   );
 };
