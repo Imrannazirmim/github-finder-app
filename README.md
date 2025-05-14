@@ -18,4 +18,4 @@
 
 ## Image
 
-![github finder image](assets/1.png)
+![github finder image](src/assets/1.png)
