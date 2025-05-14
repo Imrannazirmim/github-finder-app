@@ -18,4 +18,4 @@
 
 ## Image
 
-<img src="assets/1.png" alt="GitHub Finder Screenshot" width="700"/>
+![github finder image](assets/1.png)
