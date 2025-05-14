@@ -1,5 +1,6 @@
 # GitHub Finder
 
+<a href="https://github-finder-app25.netlify.app/" target="_blank">Preview Website</a>
 ## Features
 
 - **Search Users**: Quickly search for GitHub users by username.
