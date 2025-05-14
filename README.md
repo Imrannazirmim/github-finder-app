@@ -1,12 +1,21 @@
-# React + Vite
+# GitHub Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+- **Search Users**: Quickly search for GitHub users by username.
+- **User Profiles**: View detailed information about users, including bio, location, followers, and following.
+- **Repositories List**: Browse public repositories of any user with details like stars and forks.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **State Management**: Uses React Context API for managing global state.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
 
-## Expanding the ESLint configuration
+- **React**: For building the user interface.
+- **Vite**: For fast development and build tooling.
+- **Tailwind CSS**: For styling the application.
+- **React Context API**: For state management.
+- **GitHub API**: For fetching user and repository data.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Image
+
+<img src='assets/1.png'></img>
